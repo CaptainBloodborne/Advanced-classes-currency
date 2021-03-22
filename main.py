@@ -1,6 +1,3 @@
-# import functools
-
-
 class Currency:
     """
     1 EUR = 2 USD = 100 RUB
@@ -15,10 +12,10 @@ class Currency:
 
     @classmethod
     def course(cls, other_cls):
-        pass
+        raise NotImplementedError
 
     def to(self, other_cls) -> float:
-        pass
+        raise NotImplementedError
 
 
 class Euro(Currency):
