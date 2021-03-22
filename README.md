@@ -18,7 +18,7 @@ You need to implement the following methods:
         Dollar.course(Rubble) ==> 50.0 RUB for 1 USD
         Rubble.course(Euro)   ==> 0.01 EUR for 1 RUB
  
-- `to` - method transforms currency from one currency to another. Method should return 
+- `to_currency` - method transforms currency from one currency to another. Method should return 
 instance of a required currency.
     
         >>> e = Euro(100)
@@ -27,25 +27,25 @@ instance of a required currency.
         
         >>> print(
             f"e = {e}\n"
-            f"e.to(Dollar) = {e.to(Dollar)}\n"
-            f"e.to(Rubble) = {e.to(Rubble)}\n"
-            f"e.to(Euro)   = {e.to(Euro)}\n"
+            f"e.to_currency(Dollar) = {e.to_currency(Dollar)}\n"
+            f"e.to_currency(Rubble) = {e.to_currency(Rubble)}\n"
+            f"e.to_currency(Euro)   = {e.to_currency(Euro)}\n"
         )
         e = 100 EUR
-        e.to(Dollar) = 200.0 USD  # Dollar instance printed
-        e.to(Rubble) = 10000.0 RUB  # Ruble instance printed
-        e.to(Euro)   = 100.0 EUR  # Euro instance printed
+        e.to_currency(Dollar) = 200.0 USD  # Dollar instance printed
+        e.to_currency(Rubble) = 10000.0 RUB  # Ruble instance printed
+        e.to_currency(Euro)   = 100.0 EUR  # Euro instance printed
         
         >>> print(
             f"r = {r}\n"
-            f"r.to(Dollar) = {r.to(Dollar)}\n"
-            f"r.to(Euro)   = {r.to(Euro)}\n"
-            f"r.to(Rubble) = {r.to(Rubble)}\n"
+            f"r.to_currency(Dollar) = {r.to_currency(Dollar)}\n"
+            f"r.to_currency(Euro)   = {r.to_currency(Euro)}\n"
+            f"r.to_currency(Rubble) = {r.to_currency(Rubble)}\n"
         )
         r = 100 RUB
-        r.to(Dollar) = 2.0 USD  # Dollar instance printed
-        r.to(Euro)   = 1.0 EUR  # Euro instance printed
-        r.to(Rubble) = 100.0 RUB  # Ruble instance printed
+        r.to_currency(Dollar) = 2.0 USD  # Dollar instance printed
+        r.to_currency(Euro)   = 1.0 EUR  # Euro instance printed
+        r.to_currency(Rubble) = 100.0 RUB  # Ruble instance printed
 
 - `+` - returns an instance of a new value
 
