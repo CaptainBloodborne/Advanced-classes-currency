@@ -7,7 +7,7 @@ Course is `1 EUR == 2 USD == 100 RUB`
 
 You need to implement the following methods:
 
-- `course` - classmethod which returns string in the following pattern: {float value} {currency to} for {int value} {currency for}
+- `course` - classmethod which returns string in the following pattern: {float value} {currency to} for 1 {currency for}
     
         >>> print(
             f"Euro.course(Rubble)   ==> {Euro.course(Rubble)}\n"

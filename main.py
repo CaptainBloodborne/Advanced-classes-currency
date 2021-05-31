@@ -14,7 +14,7 @@ class Currency:
     def course(cls, other_cls):
         raise NotImplementedError
 
-    def to_currency(self, other_cls) -> float:
+    def to_currency(self, other_cls):
         raise NotImplementedError
 
 
