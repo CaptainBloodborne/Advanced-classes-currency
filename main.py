@@ -42,7 +42,8 @@ class Currency:
 class Euro(Currency):
     rates = {
         'USD': 2,
-        'RUB': 100
+        'RUB': 100,
+        'EURO': 1
     }
 
     def __repr__(self):
@@ -55,7 +56,8 @@ class Euro(Currency):
 class Dollar(Currency):
     rates = {
         'EUR': 0.5,
-        'RUB': 50
+        'RUB': 50,
+        'USD': 1
     }
 
     def __repr__(self):
@@ -68,7 +70,8 @@ class Dollar(Currency):
 class Rubble(Currency):
     rates = {
         'USD': 0.02,
-        'EUR': 0.01
+        'EUR': 0.01,
+        'RUB': 1
     }
 
     def __repr__(self):
