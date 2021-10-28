@@ -41,9 +41,9 @@ class Currency:
 
 class Euro(Currency):
     rates = {
-        'USD': 2,
-        'RUB': 100,
-        'EUR': 1
+        'USD': 2.0,
+        'RUB': 100.0,
+        'EUR': 1.0
     }
 
     def __repr__(self):
@@ -56,8 +56,8 @@ class Euro(Currency):
 class Dollar(Currency):
     rates = {
         'EUR': 0.5,
-        'RUB': 50,
-        'USD': 1
+        'RUB': 50.0,
+        'USD': 1.0
     }
 
     def __repr__(self):
@@ -71,7 +71,7 @@ class Rubble(Currency):
     rates = {
         'USD': 0.02,
         'EUR': 0.01,
-        'RUB': 1
+        'RUB': 1.0
     }
 
     def __repr__(self):
@@ -79,3 +79,32 @@ class Rubble(Currency):
             return f"{self.value } RUB"
         else:
             return "RUB"
+
+
+# print(dir(Currency))
+# Currency.__name__ = 'Cur'
+# print(Currency.__name__)
+# print(Rubble()
+#       )
+print(
+        f"Euro.course(Rubble)   ==> {Euro.course(Rubble)}\n",
+        f"Dollar.course(Rubble) ==> {Dollar.course(Rubble)}\n",
+        f"Rubble.course(Euro)   ==> {Rubble.course(Euro)}\n",
+)
+
+print(f"e = {Euro(100)}")
+e = Euro(100)
+r = Rubble(1000)
+d = Dollar(2)
+ee = Euro(1)
+dollar25 = Dollar(25)
+ruble100 = Rubble(1000)
+
+print(e.__class__.__dict__)
+print(f"e.to_currency(Dollar) = {e.to_currency(Dollar)}\n")
+print(e + r)
+print(dollar25 + ruble100)
+print(e < r)
+print(ee >= d)
+abc = dollar25 + ruble100 + e
+print(type(abc))
