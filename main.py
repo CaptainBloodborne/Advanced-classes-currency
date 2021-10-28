@@ -18,15 +18,15 @@ class Currency:
 
     @classmethod
     def course(cls, other_cls: Type[Currency]) -> str:
-        return f"{cls.__dict__['rates'][other_cls()]} {other_cls()} for 1 {cls()}"
+        return f"{cls.__dict__['rates'][str(other_cls())]} {other_cls()} for 1 {cls()}"
 
     def to_currency(self, other_cls: Type[Currency]) -> Currency:
         return other_cls(
             self.value * self.__class__.__dict__['rates'][str(other_cls())])
 
     def __add__(self: Currency, other: Currency) -> Currency:
-        return other.__class__(
-            self.to_currency(other.__class__).value + other.value
+        return self.__class__(
+            other.to_currency(self.__class__).value + self.value
         )
 
     def __gt__(self: Currency, other: Currency) -> bool:
@@ -43,7 +43,7 @@ class Euro(Currency):
     rates = {
         'USD': 2,
         'RUB': 100,
-        'EURO': 1
+        'EUR': 1
     }
 
     def __repr__(self):
